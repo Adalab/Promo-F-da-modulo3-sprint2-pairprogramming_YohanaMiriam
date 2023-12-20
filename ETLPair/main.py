@@ -11,7 +11,20 @@ clientes_mayus = pair.mayusculas(df_clientes)
 productos_mayus = pair.mayusculas(df_productos)
 ventas_mayus = pair.mayusculas(df_ventas)
 #%%
-productos = df_productos.pair.renombrar
+productos = pair.renombrar(df_productos)
+productos
 # %%
-df_productos.sample(5)
+clientes_limpieza = pair.limpieza_tabla(df_clientes)
+productos_limpieza = pair.limpieza_tabla(productos)
+ventas_limpieza = pair.limpieza_tabla(df_ventas)
+# %%
+clientes_limpieza.sample(5)
+# %%
+productos.sample(5)
+#%%
+ventas_limpieza.sample(5)
+
+df_juntos = pair.union(df_ventas, df_clientes, productos)
+df_juntos
+
 # %%
